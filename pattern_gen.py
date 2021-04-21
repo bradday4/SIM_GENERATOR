@@ -11,7 +11,6 @@ __license__ = "MIT"
 import os
 import pathlib
 from typing import Optional, Tuple
-from collections import namedtuple
 import numpy as np
 import fire
 from scipy import signal
