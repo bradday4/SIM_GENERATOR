@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+# TODO Add documentation
+# TODO Finish Type Hints
+# TODO Make CLI executable
+# TODO Release to pypi
+# TODO Update Readme
+
 __author__ = "Brad Day"
 __email__ = "bradday4@gmail.com"
 __license__ = "MIT"
