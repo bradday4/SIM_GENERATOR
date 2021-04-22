@@ -25,7 +25,7 @@ pattern_gen 256 256 16 --phase_shifts 3 --output_directory D:\SIM_GENERATOR\Demo
 Will generate the following images
 |phi_01.jpg |phi_02.jpg |phi_03.jpg|
 |--- |---|---|
-|![](DemoPatterns\phi_01.jpg) |![](DemoPatterns\phi_02.jpg) |![](DemoPatterns\phi_03.jpg)|
+|![](https://github.com/bradday4/SIM_GENERATOR/blob/main/DemoPatterns/phi_01.jpg) |![](https://github.com/bradday4/SIM_GENERATOR/blob/main/DemoPatterns/phi_02.jpg) |![](https://github.com/bradday4/SIM_GENERATOR/blob/main/DemoPatterns/phi_03.jpg)|
 
 | Argument         | Type          | Optional? | Default                  | Options                     | Desc                                                                                                                         | Example                                    |
 | ---------------- | ------------- | --------- | ------------------------ | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
