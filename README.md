@@ -36,7 +36,7 @@ Will generate the following images
 | file format      | str           | True      | `bmp`                    | `bmp tiff tif jpg jpeg png` | File type                                                                                                                    | `--file_format tif`                        |
 | bits             | int           | True      | `8`                      | `8 16 32`                   | Bit depth of image                                                                                                           | `--bits 16`                                |
 | full depth       | bool          | True      | `True`                   | `True False`                | If true Use full range of bitdepth e.g 255 for `8` otherwise image will be 0 or 1. When `bits==32` option overides to`False` | `--full_depth True`                        |
-| bar type         | str           | True      | `solid`                  | `solid triangle sine`       | Type of waveform                                                                                                             | `--sine`                                   |
+| bar type         | str           | True      | `solid`                  | `solid triangle sine`       | Type of waveform                                                                                                             | `--bar_type sine`                          |
 
 ## Requests
 
