@@ -10,6 +10,7 @@ __email__ = "bradday4@gmail.com"
 __license__ = "MIT"
 import os
 import pathlib
+from functools import partial
 from typing import Optional, Tuple
 import numpy as np
 import fire
@@ -17,6 +18,12 @@ from scipy import signal
 from PIL import Image
 
 FILEFORMATS = frozenset(["tif", "tiff", "jpg", "jpeg", "bmp", "png"])
+DEFAULTBAR = "sine"
+BARTYPES = {
+    "solid": signal.square,
+    DEFAULTBAR: np.sin,
+    "triangle": partial(signal.sawtooth, width=0.5),
+}
 ORIENTATION = frozenset(["vertical", "horizontal"])
 DEVICEDEFAULTS = (1024, 1024, 8)
 BITDEPTH = frozenset([8, 16, 32])
@@ -53,8 +60,15 @@ def cast(x: np.array, dtype: np.dtype):
     return x.astype(dtype)
 
 
+def func_dispatcher(t: np.ndarray, bar_type: str):
+
+    func = BARTYPES[bar_type]
+    return func(t)
+
+
 def main(
     *args: Optional[Tuple[int, int, int]],
+    bar_type: Optional[str] = "solid",
     orientation: str = "vertical",
     file_format: str = "bmp",
     phase_shifts: int = 3,
@@ -73,6 +87,11 @@ def main(
         lv, lh, wb = args
     else:
         lv, lh, wb = DEVICEDEFAULTS
+
+    if bar_type not in BARTYPES:
+        raise ValueError(
+            f"Bar type must be one of {BARTYPES.keys()} but '{bar_type}' was given"
+        )
 
     if orientation not in ORIENTATION:
         raise ValueError(
@@ -105,6 +124,9 @@ def main(
         raise TypeError(
             f"flag full_depth must be True or False not type {type(full_depth)}"
         )
+    # check full_depth is true if bartype is set to anything other than solid
+    if bar_type != DEFAULTBAR and not full_depth:
+        raise TypeError(f"bar_type {bar_type} only supported in full depth mode")
 
     # check chosen number of bits is compatabile with image format
     if not bits in FORMATBITPAIRS[file_format]:
@@ -134,7 +156,7 @@ def main(
 
     for i, phi in enumerate(phi_rad):
 
-        sig = signal.square(2 * np.pi * freq * t + phi)
+        sig = func_dispatcher(2 * np.pi * freq * t + phi, bar_type)
         sig = rescale(sig, lims=lims)
         sig = cast(sig, DTYPES[bits])
 
