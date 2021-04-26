@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # TODO Add documentation
 # TODO Finish Type Hints
-# TODO Make CLI executable
 # TODO Release to pypi
-# TODO Update Readme
 
 __author__ = "Brad Day"
 __email__ = "bradday4@gmail.com"
 __license__ = "MIT"
 import os
+import sys
 import pathlib
 from functools import partial
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Union
 import numpy as np
 import fire
 from scipy import signal
@@ -66,6 +65,26 @@ def func_dispatcher(t: np.ndarray, bar_type: str):
     return func(t)
 
 
+def verify_output_dir(output_directory: Union[str, None]) -> str:
+    # check the directory exists
+    if output_directory:
+        if not os.path.exists(output_directory):
+            raise ValueError(f"Output directory {output_directory} doesn't exist")
+    else:
+        if getattr(sys, "frozen", False):
+            parent = os.path.dirname(sys.executable)
+        elif __file__:
+            parent = pathlib.Path(__file__).parent.absolute()
+
+        output_directory = os.path.join(parent, "patterns")
+        if not os.path.exists(output_directory):
+            os.mkdir(output_directory)
+        print(
+            f"\nNo Output directory given using {output_directory} for patterned images\n"
+        )
+    return output_directory
+
+
 def main(
     *args: Optional[Tuple[int, int, int]],
     bar_type: Optional[str] = "solid",
@@ -102,18 +121,7 @@ def main(
     if file_format not in FILEFORMATS:
         raise ValueError(f"File format {file_format} not recognized")
 
-    # check the directory exists
-    if output_directory:
-        if not os.path.exists(output_directory):
-            raise ValueError(f"Output directory {output_directory} doesn't exist")
-    else:
-        parent = pathlib.Path(__file__).parent.absolute()
-        output_directory = os.path.join(parent, "patterns")
-        if not os.path.exists(output_directory):
-            os.mkdir(output_directory)
-        print(
-            f"\nNo Output directory given using {output_directory} for patterned images\n"
-        )
+    output_directory = verify_output_dir(output_directory)
 
     # check bit depth is correct
     if bits not in BITDEPTH:
