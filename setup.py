@@ -12,7 +12,7 @@ setup(
     author="Brad Day",
     author_email="bradday4@gmaild.com",
     url="https://github.com/bradday4/SIM_GENERATOR",
-    download_url="https://github.com/bradday4/SIM_GENERATOR/releases/tag/0.2.1",
+    download_url="https://github.com/bradday4/SIM_GENERATOR/releases/tag/0.3.0",
     keywords=[
         "SIM",
         "Structured Illumination Microscopy",
@@ -21,8 +21,6 @@ setup(
     install_requires=["numpy", "scipy", "fire", "pillow"],  # I get to this in a second
     classifiers=[
         "Development Status :: 3 - Alpha",  # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
-        "Intended Audience :: Researchers",
-        "Topic :: Optics :: Structured Illumination Microscopy",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
