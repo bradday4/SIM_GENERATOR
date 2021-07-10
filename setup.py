@@ -6,7 +6,7 @@ from distutils.core import setup
 setup(
     name="sim_generator",
     packages=["sim_generator"],
-    version="0.3.0",
+    version="0.3.1",
     license="MIT",
     description="A little command line utility to generate pattern images for structured illumination microscopy",
     author="Brad Day",
