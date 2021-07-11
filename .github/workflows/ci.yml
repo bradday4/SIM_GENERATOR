@@ -3,10 +3,12 @@ on:
   push:
     branches:
       - main
+      - dev
 
   pull_request:
     branches:
       - main
+      - dev
 
 jobs:
   calculate-version:
@@ -15,7 +17,11 @@ jobs:
     outputs:
       branchName: ${{ steps.gitversion.outputs.branchName }} # To use an output in another job, you have to map it to a job output.
     steps:
-      # gitversion/execute step omitted for brevity
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: "6.x"
+          includePrerelease: true
 
       - name: Determine Version
         id: gitversion
