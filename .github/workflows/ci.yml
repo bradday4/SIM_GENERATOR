@@ -17,6 +17,10 @@ jobs:
     outputs:
       branchName: ${{ steps.gitversion.outputs.branchName }} # To use an output in another job, you have to map it to a job output.
     steps:
+      - uses: actions/checkout@v2
+      - name: Fetch all history for all tags and branches
+        run: |
+          git fetch --prune --unshallow
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10
         with:
