@@ -1,0 +1,37 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fetch all history for all tags and branches
+        run: |
+          git fetch --prune --unshallow
+      - run: |
+          npm install
+          npm run format-check
+          npm run build:github
+          npm run build:azure
+        name: Build code
+      - name: Install GitVersion
+        uses: ./gitversion/setup
+        with:
+          versionSpec: "5.x"
+      - name: Use GitVersion
+        id: gitversion # step id used as reference for output values
+        uses: ./gitversion/execute
+      - run: |
+          echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
