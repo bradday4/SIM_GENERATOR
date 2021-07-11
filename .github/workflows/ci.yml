@@ -9,29 +9,24 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-      fail-fast: false
+  calculate-version:
+    name: Calculate Version
+    runs-on: ubuntu-latest
+    outputs:
+      branchName: ${{ steps.gitversion.outputs.branchName }} # To use an output in another job, you have to map it to a job output.
     steps:
-      - uses: actions/checkout@v2
-      - name: Fetch all history for all tags and branches
-        run: |
-          git fetch --prune --unshallow
+      # gitversion/execute step omitted for brevity
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.7
+
+  create-release-notes:
+    name: Create Release Notes
+    runs-on: ubuntu-latest
+    needs: calculate-version
+    if: contains(needs.calculate-version.outputs.branchName, 'main') # Output variable accessed via `needs` context.
+    steps:
       - run: |
-          npm install
-          npm run format-check
-          npm run build:github
-          npm run build:azure
-        name: Build code
-      - name: Install GitVersion
-        uses: ./gitversion/setup
-        with:
-          versionSpec: "5.x"
-      - name: Use GitVersion
-        id: gitversion # step id used as reference for output values
-        uses: ./gitversion/execute
-      - run: |
-          echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
+          # Output variables can also be accessed in steps, using an expression.
+          echo "Creating release notes for ${{ needs.calculate-version.outputs.branchName }} branch."
