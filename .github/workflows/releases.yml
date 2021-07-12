@@ -28,4 +28,4 @@ jobs:
       - name: Trigger Python release
         # runs-on: ubuntu-latest
         # - name: Run my action
-        uses: ./.github/actions/SIM_GENERATOR/python-publish
+        uses: ./.github/actions/python-publish
