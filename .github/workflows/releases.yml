@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          token: ${{ secrets.PUSH2PYPI }}
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -23,3 +24,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release@17.4.4
+  trigger-python-release:
+    name: Trigger Python release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run my action
+        uses: ./.github/actions/SIM_GENERATOR/Upload Python Package
