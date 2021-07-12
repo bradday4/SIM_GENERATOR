@@ -7,6 +7,7 @@
         "@semantic-release/release-notes-generator",
         "semantic-release-pypi",
         "@semantic-release/github",
+        "@semantic-release/changelog",
         [
             "@semantic-release/git",
             {
