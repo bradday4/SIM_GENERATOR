@@ -24,9 +24,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release@17.4.4
-  trigger-python-release:
-    name: Trigger Python release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run my action
+
+      - name: Trigger Python release
+        # runs-on: ubuntu-latest
+        # - name: Run my action
         uses: ./.github/actions/SIM_GENERATOR/python-publish
