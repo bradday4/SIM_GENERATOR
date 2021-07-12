@@ -20,7 +20,7 @@ jobs:
       # - name: Install dependencies
       #   run: npm ci
       - name: Install semantic-release
-        run: npm install -g semantic-release @semantic-release/github @semantic-release/commit-analyzer @semantic-release/git @semantic-release/release-notes-generator semantic-release-pypi
+        run: npm install -g semantic-release @semantic-release/github @semantic-release/commit-analyzer @semantic-release/git @semantic-release/release-notes-generator @semantic-release/changelog semantic-release-pypi
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -31,7 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release@17.4.4
+        run: npx semantic-release@17.4.4 --no-ci
   # deploy:
   #   needs: [release]
   #   runs-on: ubuntu-latest
