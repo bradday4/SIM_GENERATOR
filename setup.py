@@ -3,9 +3,11 @@
 
 from distutils.core import setup
 
+__version__ = "1.0.4"
 setup(
     name="sim_generator",
     packages=["sim_generator"],
+    version=__version__,
     license="MIT",
     description="A little command line utility to generate pattern images for structured illumination microscopy",
     author="Brad Day",
