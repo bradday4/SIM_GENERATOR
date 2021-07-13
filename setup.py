@@ -3,7 +3,7 @@
 
 from distutils.core import setup
 
-__version__ = "1.0.4"
+__version__ = "1.1.0"
 setup(
     name="sim_generator",
     packages=["sim_generator"],
