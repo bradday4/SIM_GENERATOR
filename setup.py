@@ -4,7 +4,7 @@
 from distutils.core import setup
 import setuptools  # noqa
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 setup(
     name="sim_generator",
     packages=["sim_generator"],

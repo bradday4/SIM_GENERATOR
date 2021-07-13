@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.1 (2021-07-13)
+### Fix
+* **python semantic release:** Hacky fix attempt for not recognizing install requires ([`0539ece`](https://github.com/bradday4/SIM_GENERATOR/commit/0539eceb785752e08cf252c5734f5dfe886f6826))
+
 ## v1.1.0 (2021-07-13)
 ### Feature
 * **semantic-release-pypi:** Use built in pypi tool ([`7da8264`](https://github.com/bradday4/SIM_GENERATOR/commit/7da82649d6ab190330250c85350e20bd8e110e79))
