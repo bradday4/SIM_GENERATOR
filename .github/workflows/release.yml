@@ -20,3 +20,19 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pypi_token: ${{ secrets.PYPI_TOKEN }}
+
+  generate-exe:
+    needs: [release]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: PyInstaller Windows
+        uses: JackMcKew/pyinstaller-action-windows@main
+        with:
+          path: src
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-exe
+          path: src/dist/windows
