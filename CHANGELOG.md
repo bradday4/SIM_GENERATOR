@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v1.2.2 (2021-07-14)
+### Fix
+* **release binary:** Change name to pattern_gen ([`7630ac0`](https://github.com/bradday4/SIM_GENERATOR/commit/7630ac044ec30ffb3b74243fbba32038f425770a))
+* **release binary:** Build one file ([`8e95a54`](https://github.com/bradday4/SIM_GENERATOR/commit/8e95a54f381818a59172f449c33dec25c30cbd93))
+* **release binary:** Remove root dir from spec file ([`229abce`](https://github.com/bradday4/SIM_GENERATOR/commit/229abcef5d78227714f7ba2286ceb9ef2aafe114))
+* **release binary:** Custom spec file ([`d66e459`](https://github.com/bradday4/SIM_GENERATOR/commit/d66e459f10e68dbff32d86728df2ddb04b8d1fa0))
+* **release binary:** Update spec file ([`f129a1a`](https://github.com/bradday4/SIM_GENERATOR/commit/f129a1a10ac6451e97031a26405512727b3dcbb4))
+* **release binary:** Added spec file ([`bc7150e`](https://github.com/bradday4/SIM_GENERATOR/commit/bc7150e68bab80c1cfd71b7762f76f5204e4a746))
+
 ## v1.2.1 (2021-07-14)
 ### Fix
 * **release binary:** Change packages to src ([`da9c745`](https://github.com/bradday4/SIM_GENERATOR/commit/da9c745f09de48927d98204aa294e807be1060db))
