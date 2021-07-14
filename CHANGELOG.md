@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.2.0 (2021-07-14)
+### Feature
+* **release binary:** Adding support for pyinstaller  to generate windows executable ([`4701005`](https://github.com/bradday4/SIM_GENERATOR/commit/4701005a5fe1802ea5d34a518dd2d00048acc70d))
+
 ## v1.1.1 (2021-07-13)
 ### Fix
 * **python semantic release:** Hacky fix attempt for not recognizing install requires ([`0539ece`](https://github.com/bradday4/SIM_GENERATOR/commit/0539eceb785752e08cf252c5734f5dfe886f6826))
