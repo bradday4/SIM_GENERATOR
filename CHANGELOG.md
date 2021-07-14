@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.2.1 (2021-07-14)
+### Fix
+* **release binary:** Change packages to src ([`da9c745`](https://github.com/bradday4/SIM_GENERATOR/commit/da9c745f09de48927d98204aa294e807be1060db))
+
 ## v1.2.0 (2021-07-14)
 ### Feature
 * **release binary:** Adding support for pyinstaller  to generate windows executable ([`4701005`](https://github.com/bradday4/SIM_GENERATOR/commit/4701005a5fe1802ea5d34a518dd2d00048acc70d))
