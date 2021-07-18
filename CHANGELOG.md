@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.0 (2021-07-18)
+### Feature
+* **auto release:** Push artifact to current release ([`eff0b6c`](https://github.com/bradday4/SIM_GENERATOR/commit/eff0b6c2fceb572d59003386e504153d2c04c377))
+
+### Fix
+* **auto release:** Trying no newline ([`816a652`](https://github.com/bradday4/SIM_GENERATOR/commit/816a65203b718beb0d6271f73fc0ebd6c4b2d888))
+
 ## v1.2.2 (2021-07-14)
 ### Fix
 * **release binary:** Change name to pattern_gen ([`7630ac0`](https://github.com/bradday4/SIM_GENERATOR/commit/7630ac044ec30ffb3b74243fbba32038f425770a))
