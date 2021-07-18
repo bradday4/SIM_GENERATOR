@@ -36,3 +36,16 @@ jobs:
         with:
           name: pattern_gen
           path: src/dist/windows
+
+  upload-exe-to-releases:
+    needs: [release, generate-exe]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create GitHub release
+        uses: Roang-zero1/github-upload-release-artifacts-action@master
+        with:
+          args:
+            - src/dist/windows/pattern_gen.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
