@@ -19,7 +19,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: pattern_gen
-          path: ${{ github.workspace }}/artifact
+          path: src/dist/windows
 
   release:
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
           # The URL for uploading assets to the release
           upload_url: ${{steps.get_upload_url.outputs.url}}
           # The path to the asset you want to upload
-          asset_path: ${{ github.workspace }}/artifact/pattern_gen.exe
+          asset_path: src/dist/windows/pattern_gen.exe
           # The name of the asset you want to upload
           asset_name: pattern_gen.exe
           # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
