@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.7 (2021-07-19)
+### Fix
+* **auto release:** Upload workspace ([`67e5e70`](https://github.com/bradday4/SIM_GENERATOR/commit/67e5e707a8756730a405bfa143455e4f9df5c98a))
+
 ## v1.3.6 (2021-07-19)
 ### Fix
 * **auto release:** Use github workspace path ([`c50b51c`](https://github.com/bradday4/SIM_GENERATOR/commit/c50b51c3aea5856780697a29cefa751f36dfe04f))
