@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.2 (2021-07-19)
+### Fix
+* **auto release:** Update path ([`2b793a9`](https://github.com/bradday4/SIM_GENERATOR/commit/2b793a983cd1e348fc9f0173d6d05192d0af77c0))
+* **auto release:** Remove - from uses ([`1443570`](https://github.com/bradday4/SIM_GENERATOR/commit/144357097de3aa7a81bd502b298cec979a096166))
+* **auto release:** Upload release asset ([`731d7db`](https://github.com/bradday4/SIM_GENERATOR/commit/731d7dbe83400c228894fff0e8f51f6853ce39e0))
+
 ## v1.3.1 (2021-07-19)
 ### Fix
 * **auto release:** Build then deploy ([`01b767b`](https://github.com/bradday4/SIM_GENERATOR/commit/01b767bc4942bd180a4acd773770271ebf551431))
