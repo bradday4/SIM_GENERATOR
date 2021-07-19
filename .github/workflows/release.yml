@@ -61,8 +61,8 @@ jobs:
           # The URL for uploading assets to the release
           upload_url: ${{steps.get_upload_url.outputs.url}}
           # The path to the asset you want to upload
-          asset_path: ./pattern_gen.exe
+          asset_path: ./pattern_gen
           # The name of the asset you want to upload
-          asset_name: pattern_gen.exe
+          asset_name: pattern_gen.zip
           # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
-          asset_content_type: application/vnd.microsoft.portable-executable
+          asset_content_type: application/zip
