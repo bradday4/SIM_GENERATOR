@@ -40,6 +40,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: pattern_gen
+
+      - name: runs ls
         run: ls ${{ github.workspace }}
       # - name: Get Latest Release
       #   uses: octokit/request-action@v2.x
