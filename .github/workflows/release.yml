@@ -36,7 +36,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pypi_token: ${{ secrets.PYPI_TOKEN }}
 
-      - name: Upload Artifact
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pattern_gen
+
+      - name: Get Latest Release
         uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
