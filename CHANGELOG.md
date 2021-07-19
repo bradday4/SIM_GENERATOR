@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.3 (2021-07-19)
+### Fix
+* **auto release:** Change upload asset path ([`420fc25`](https://github.com/bradday4/SIM_GENERATOR/commit/420fc25a8c8d3bdc09a7220c87a729687b7ad696))
+
 ## v1.3.2 (2021-07-19)
 ### Fix
 * **auto release:** Update path ([`2b793a9`](https://github.com/bradday4/SIM_GENERATOR/commit/2b793a983cd1e348fc9f0173d6d05192d0af77c0))
