@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.1 (2021-07-19)
+### Fix
+* **auto release:** Build then deploy ([`01b767b`](https://github.com/bradday4/SIM_GENERATOR/commit/01b767bc4942bd180a4acd773770271ebf551431))
+
 ## v1.3.0 (2021-07-18)
 ### Feature
 * **auto release:** Push artifact to current release ([`eff0b6c`](https://github.com/bradday4/SIM_GENERATOR/commit/eff0b6c2fceb572d59003386e504153d2c04c377))
