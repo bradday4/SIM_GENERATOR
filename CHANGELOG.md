@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.8 (2021-07-19)
+### Fix
+* **auto release:** Artifact loads correctly to latest release ([`04698fe`](https://github.com/bradday4/SIM_GENERATOR/commit/04698fef082067978e90e1c172b58ef2febe7377))
+
 ## v1.3.7 (2021-07-19)
 ### Fix
 * **auto release:** Upload workspace ([`67e5e70`](https://github.com/bradday4/SIM_GENERATOR/commit/67e5e707a8756730a405bfa143455e4f9df5c98a))
