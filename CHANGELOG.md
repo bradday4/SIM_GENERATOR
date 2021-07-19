@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.4 (2021-07-19)
+### Fix
+* **auto release:** Artifact is folder not executable ([`437f017`](https://github.com/bradday4/SIM_GENERATOR/commit/437f0173876f066aae1074393b28060a57ba09bc))
+
 ## v1.3.3 (2021-07-19)
 ### Fix
 * **auto release:** Change upload asset path ([`420fc25`](https://github.com/bradday4/SIM_GENERATOR/commit/420fc25a8c8d3bdc09a7220c87a729687b7ad696))
