@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.5 (2021-07-19)
+### Fix
+* **auto release:** Download artifact to second job ([`164fe43`](https://github.com/bradday4/SIM_GENERATOR/commit/164fe4371f1fec20bee1c8159446f466c37ea017))
+
 ## v1.3.4 (2021-07-19)
 ### Fix
 * **auto release:** Artifact is folder not executable ([`437f017`](https://github.com/bradday4/SIM_GENERATOR/commit/437f0173876f066aae1074393b28060a57ba09bc))
