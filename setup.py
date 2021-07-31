@@ -12,7 +12,7 @@ DEVPKG = ["pre-commit"] + TESTPKG
 __version__ = "1.3.8"
 setup(
     name="sim_generator",
-    packages=["src"],
+    packages=["sim_generator"],
     version=__version__,
     license="MIT",
     description="A little command line utility to generate pattern images for structured illumination microscopy",
