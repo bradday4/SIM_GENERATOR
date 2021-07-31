@@ -90,8 +90,8 @@ class ArgTypeMixin(Enum):
 class FileFormat(ArgTypeMixin, Enum):
     """What type of format to save output images as"""
 
-    tif = "tif"
-    tiff = "tif"
+    tif = "tiff"
+    tiff = "tiff"
     jpg = "jpeg"
     jpeg = "jpeg"
     bmp = "bmp"
@@ -310,7 +310,7 @@ def arg_logger(args):
 
 def main():
     custom_fig = Figlet(font="colossal")
-    print(custom_fig.renderText("SIM GEN"))
+    print("\n\n\n", custom_fig.renderText("SIM GEN"))
     # use argparse parser to parse input args
     if not sys.argv[1:]:
         sys.exit(0)
