@@ -308,7 +308,7 @@ def arg_logger(args):
         logger.debug("Argument %s: %r", arg, value)
 
 
-if __name__ == "__main__":
+def main():
     custom_fig = Figlet(font="colossal")
     print(custom_fig.renderText("SIM GEN"))
     # use argparse parser to parse input args
@@ -319,3 +319,7 @@ if __name__ == "__main__":
     arg_logger(parsed_args)
     sg = SimGenerator(**vars(parsed_args))
     sg.run()
+
+
+if __name__ == "__main__":
+    main()
