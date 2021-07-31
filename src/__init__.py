@@ -1,1 +1,1 @@
-from sim_generator.pattern_gen import PatternGenerator
+from sim_generator.pattern_gen import SimGenerator
