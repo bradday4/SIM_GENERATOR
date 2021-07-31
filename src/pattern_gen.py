@@ -31,13 +31,19 @@ else:
 logger = logging.getLogger("pattern_gen")
 logger.setLevel(logging.DEBUG)
 if application_path.parent.joinpath("logs").exists():
-    fh = logging.FileHandler(application_path.parent.joinpath("logs/pattern_gen.log"))
+    fh = logging.FileHandler(
+        application_path.parent.joinpath("logs/pattern_gen.log")
+    )
 else:
-    fh = logging.FileHandler(Path(tempfile.gettempdir()).joinpath("pattern_gen.log"))
+    fh = logging.FileHandler(
+        Path(tempfile.gettempdir()).joinpath("pattern_gen.log")
+    )
 fh.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 ch.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+formatter = logging.Formatter(
+    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 logger.addHandler(fh)
@@ -60,7 +66,9 @@ class CheckDirAction(argparse.Action):
 class MinPixAction(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
         if values < 1:
-            parser.error("Minimum pixel value for {0} is 1 pixel".format(self.dest))
+            parser.error(
+                "Minimum pixel value for {0} is 1 pixel".format(self.dest)
+            )
 
         setattr(namespace, self.dest, values)
 
@@ -71,7 +79,9 @@ class ArgTypeMixin(Enum):
         try:
             return cls[s]
         except KeyError:
-            raise argparse.ArgumentTypeError(f"{s!r} is not a valid {cls.__name__}")
+            raise argparse.ArgumentTypeError(
+                f"{s!r} is not a valid {cls.__name__}"
+            )
 
     def __str__(self):
         return self.name
@@ -238,7 +248,9 @@ class SimGenerator:
         """Create 1d signal of size n"""
 
         phi_deg = np.linspace(0.001, 360, self.phase_shifts, endpoint=False)
-        return (np.radians(deg) for deg in phi_deg)  # phase in radian generator
+        return (
+            np.radians(deg) for deg in phi_deg
+        )  # phase in radian generator
 
     def _gen_signal(self, phi):
         # todo: generate t outside of this function
@@ -253,7 +265,9 @@ class SimGenerator:
     def _rescale(self, x, lims=(0, 1)):
         new_min, new_max = lims
         old_min, old_max = np.min(x), np.max(x)
-        return (new_max - new_min) * ((x - old_min) / (old_max - old_min)) + new_min
+        return (new_max - new_min) * (
+            (x - old_min) / (old_max - old_min)
+        ) + new_min
 
     def _cast(self, x: np.array, dtype: np.dtype):
         return x.astype(dtype)
@@ -262,19 +276,21 @@ class SimGenerator:
         """Save the image to disk"""
         for i, image in images:
             _path = os.path.join(
-                self.output_directory, f"phi_{i+1:02d}.{self.file_format.value}"
+                self.output_directory,
+                f"phi_{i+1:02d}.{self.file_format.value}",
             )
-            image.save(
-                _path,
-                self.file_format.value,
-            )
+            image.save(_path, self.file_format.value)
             logger.info(f"Image saved to {_path}")
 
     def _make_pattern_image(self, sig: np.array) -> Image.Image:
         if self.orientation.name == "horizontal":
-            return Image.fromarray(np.tile(sig[:, np.newaxis], (1, self._tile_dim())))
+            return Image.fromarray(
+                np.tile(sig[:, np.newaxis], (1, self._tile_dim()))
+            )
         else:
-            return Image.fromarray(np.tile(sig[np.newaxis, :], (self._tile_dim(), 1)))
+            return Image.fromarray(
+                np.tile(sig[np.newaxis, :], (self._tile_dim(), 1))
+            )
 
     def run(self):
         """Run the simulation"""
