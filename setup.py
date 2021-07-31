@@ -4,6 +4,11 @@
 from distutils.core import setup
 import setuptools  # noqa
 
+BASEPKG = ["numpy", "scipy", "pillow", "pyfiglet"]
+
+TESTPKG = ["flake8", "pytest", "black"] + BASEPKG
+DEVPKG = ["pre-commit"] + TESTPKG
+
 __version__ = "1.3.8"
 setup(
     name="sim_generator",
@@ -20,12 +25,8 @@ setup(
         "Structured Illumination Microscopy",
         "Pattern Generation",
     ],  # Keywords that define your package best
-    install_requires=[
-        "numpy",
-        "scipy",
-        "pillow",
-        "pyfiglet",
-    ],
+    install_requires=BASEPKG,
+    extras_require={"test": TESTPKG, "dev": DEVPKG},
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.7",
