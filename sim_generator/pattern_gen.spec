@@ -6,6 +6,7 @@ block_cipher = None
 
 a = Analysis(['pattern_gen.py'],
              pathex=['/home/brad/Documents/SIM_GENERATOR'],
+             datas=[('/opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/pyfiglet', './pyfiglet')],
              binaries=[],
              datas=[],
              hiddenimports=[],
