@@ -23,12 +23,12 @@ jobs:
       - name: PyInstaller Windows
         uses: JackMcKew/pyinstaller-action-windows@main
         with:
-          path: src
+          path: sim_generator
 
       - uses: actions/upload-artifact@v2
         with:
           name: pattern_gen
-          path: src/dist/windows
+          path: sim_generator/dist/windows
 
   release:
     runs-on: ubuntu-latest
